@@ -34,7 +34,6 @@ public class Client {
                         if(command.equalsIgnoreCase("sleep")){
                             command = "rundll32.exe powrprof.dll,SetSuspendState Sleep";
                         }else if(command.equalsIgnoreCase("prank")){
-                            //command = "prank.bat";
                             command = "echo Running prank";
                             new Prank("You have been hacked!");
                         }
