@@ -4,14 +4,16 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.net.InetSocketAddress;
 
 public class Client {
     public static void main(String[] args) {
-        String hostname = "localhost";
-        int port = 12345;
-
         while(true){
-            try(Socket socket = new Socket(hostname, port)){
+            try(Socket socket = new Socket()){
+                String hostname = args[0];
+                int port = 12345;
+
+                socket.connect(new InetSocketAddress(hostname, port), 2000);
                 System.out.println("Ready to mess with this machine!");
 
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -61,11 +63,14 @@ public class Client {
                 }
             }catch(IOException | InterruptedException e){
                 System.out.println("Unable to connect to server, Retrying...");
-                try{
+                try {
                     Thread.sleep(2000);
-                }catch(InterruptedException ie){
-                    System.out.println(ie.getMessage());
+                } catch (InterruptedException ie) {
+                    Thread.currentThread().interrupt();
                 }
+            }catch(ArrayIndexOutOfBoundsException e){
+                System.out.println("Enter valid hostname\nUsage: java -jar Client.jar <hostname>");
+                break;
             }
         }
     }
