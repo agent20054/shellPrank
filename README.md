@@ -24,6 +24,7 @@ The server sends commands to the client, which executes them and returns the out
    
 2. Start the client:
    - Run the `build/Client.bat` file on the target machine.
+   - The terminal window will wait for the user to enter a hostname.
    - The client will connect to the server and wait for commands to execute.
 
 ### Custom Commands:
