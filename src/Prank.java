@@ -10,7 +10,7 @@ public class Prank {
         int offsetX = 20;
         int offsetY = 20;
 
-        Image errorIcon = (new ImageIcon(getClass().getResource("res/error_icon.png"))).getImage();
+        Image errorIcon = (new ImageIcon(getClass().getResource("error_icon.png"))).getImage();
 
         for (int i = 0; i < 10; i++) {
             int x = startX + i * offsetX;
