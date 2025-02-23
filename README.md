@@ -59,7 +59,7 @@ This project is for educational purposes only. The creator does not condone the 
 
 - **Creator**: Adam M. Hache
 - **Made in**: 2025
-- **Version**: 1.0.1
+- **Version**: 1.0.2
 
 ---
 
