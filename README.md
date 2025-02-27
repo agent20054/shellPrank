@@ -37,6 +37,7 @@ Here are the available commands that the server can send to the client:
 
 2. **`sleep`**:
    - This command suspends the client machine, effectively putting it to sleep.
+   - The client bat file has to be run as Administrator to work.
    - On Windows, it triggers the **Sleep** function using the `rundll32` command.
    - On Linux, it calls the `systemctl suspend` command.
    
