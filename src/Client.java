@@ -32,7 +32,7 @@ public class Client {
                     Process process;
                     if(os.contains("win")){
                         if(command.equalsIgnoreCase("sleep")){
-                            command = "rundll32.exe powrprof.dll,SetSuspendState Sleep";
+                            command = "powercfg -h off && rundll32.exe powrprof.dll,SetSuspendState 0,1,0";
                         }else if(command.equalsIgnoreCase("prank")){
                             command = "echo Running prank";
                             new Prank("You have been hacked!");
